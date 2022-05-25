@@ -7,16 +7,20 @@ const ingredients = [
   'Condiments',
 ];
 
+const listEl = document.querySelector('#ingredients')
+
+const items = ingredients.map(item => {
+  const itemEl = document.createElement('li');
+  itemEl.classList.add('item');
+  itemEl.textContent = item;
+  console.log(itemEl)
+  return itemEl;
+});
+
+console.log(items);
+listEl.append(...items);
+  
 
 
 
 
-// Напиши скрипт, который для каждого элемента 
-//массива ingredients:
-
-// Создаст отдельный элемент <li>. Обзательно используй 
-//метод document.createElement().
-// Добавит название ингредиента как его текстовое содержимое.
-// Добавит элементу класс item.
-// После чего вставит все <li> за одну операцию
-// в список ul.ingredients.
