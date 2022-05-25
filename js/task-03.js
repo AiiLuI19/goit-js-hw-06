@@ -12,3 +12,24 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const makeGalery = ({ url, alt }) => {
+  
+  return `
+  <li>
+    <img class="picture" src="${url}"  alt=${alt} width = 300 height = 180>  </img>
+    </li>
+ `;
+};
+const galleryEl = document.querySelector('.gallery');
+const makeArrPictures = images.map(makeGalery).join('');
+galleryEl.insertAdjacentHTML('beforeend', makeArrPictures);
+console.log(makeArrPictures)
+
+const list = document.querySelector(".gallery");
+list.style.listStyle = "none";
+list.style.display = "flex";
+list.style.justifyContent = "space-around";
+
+
