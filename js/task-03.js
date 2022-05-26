@@ -14,7 +14,7 @@ const images = [
 ];
 
 
-const makeGalery = ({ url, alt }) => {
+const makeGallery = ({ url, alt }) => {
   
   return `
   <li>
@@ -26,6 +26,8 @@ const galleryEl = document.querySelector('.gallery');
 const makeArrPictures = images.map(makeGalery).join('');
 galleryEl.insertAdjacentHTML('beforeend', makeArrPictures);
 console.log(makeArrPictures)
+
+//CSS <style>
 
 const list = document.querySelector(".gallery");
 list.style.listStyle = "none";
