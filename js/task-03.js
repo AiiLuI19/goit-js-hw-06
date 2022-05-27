@@ -23,7 +23,7 @@ const makeGallery = ({ url, alt }) => {
  `;
 };
 const galleryEl = document.querySelector('.gallery');
-const makeArrPictures = images.map(makeGalery).join('');
+const makeArrPictures = images.map(makeGallery).join('');
 galleryEl.insertAdjacentHTML('beforeend', makeArrPictures);
 console.log(makeArrPictures)
 
@@ -33,5 +33,10 @@ const list = document.querySelector(".gallery");
 list.style.listStyle = "none";
 list.style.display = "flex";
 list.style.justifyContent = "space-around";
+const picture  = document.querySelectorAll(".picture");
+console.log(picture)
+picture[0].style.boxShadow = "10px 20px 30px pink"; 
+picture[1].style.boxShadow = "10px 20px 30px greenyellow"; 
+picture[2].style.boxShadow = "10px 20px 30px skyblue"; 
 
 
