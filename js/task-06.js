@@ -1,13 +1,21 @@
 
 const validationInputEl = document.querySelector("#validation-input");
 
+
 function validateInput(event) {
     const update = event.target;
-    
     const length = Number(update.dataset.length);
-    // const addClassValidValue = update.classList.add("valid");
-    // const addClassInvalidValue = update.classList.add("invalid");
-    length === update.value.trim().length ? update.classList.add("valid") : update.classList.add("invalid");
+function addClassValidValue () {
+        update.classList.add("valid");
+    update.classList.remove("invalid");
+    };
+
+function addClassInvalidValue () {
+    update.classList.add("invalid");
+        update.classList.remove("valid");
+    };
+    
+    length === update.value.trim().length ? addClassValidValue (): addClassInvalidValue();
 }
 
 validationInputEl.addEventListener("blur", validateInput);
