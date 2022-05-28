@@ -5,18 +5,15 @@ const validationInputEl = document.querySelector("#validation-input");
 function validateInput(event) {
     const update = event.target;
     const length = Number(update.dataset.length);
-function addClassValidValue () {
-        update.classList.add("valid");
-    update.classList.remove("invalid");
-    };
 
-function addClassInvalidValue () {
-    update.classList.add("invalid");
-        update.classList.remove("valid");
-    };
     
-    length === update.value.trim().length ? addClassValidValue (): addClassInvalidValue();
+    length === update.value.trim().length ? addClassValue (update, "valid", "invalid") : addClassValue (update, "invalid", "valid");
+    
 }
+function addClassValue (elem, add, remove) {
+    elem.classList.add(add);
+    elem.classList.remove(remove);
+    };
 
 validationInputEl.addEventListener("blur", validateInput);
 
