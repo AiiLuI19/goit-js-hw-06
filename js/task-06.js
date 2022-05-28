@@ -7,7 +7,10 @@ function validateInput(event) {
     const length = Number(update.dataset.length);
 
     
-    length === update.value.trim().length ? addClassValue (update, "valid", "invalid") : addClassValue (update, "invalid", "valid");
+    if (length === update.value.trim().length) {
+        return addClassValue(update, "valid", "invalid")
+    }
+    addClassValue(update, "invalid", "valid");
     
 }
 function addClassValue (elem, add, remove) {
